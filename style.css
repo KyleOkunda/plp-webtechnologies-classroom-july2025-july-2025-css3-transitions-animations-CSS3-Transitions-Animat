@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background: #f0f4f8;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #0077ff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #005bbb;
+  transform: scale(1.05);
+}
+
+/* Box animation */
+.box {
+  width: 100px;
+  height: 100px;
+  background: coral;
+  margin: 20px auto;
+  border-radius: 8px;
+  transition: transform 0.5s ease;
+}
+
+.box.animate {
+  transform: rotate(360deg) scale(1.2);
+}
+
+/* Card flip */
+.card {
+  perspective: 1000px;
+  width: 150px;
+  height: 200px;
+  margin: 20px auto;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.card-front {
+  background: lightgreen;
+}
+
+.card-back {
+  background: lightcoral;
+  transform: rotateY(180deg);
+}
+
+/* Popup modal */
+.popup {
+  position: fixed;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  transition: top 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.popup.show {
+  top: 100px;
+  opacity: 1;
+}
